@@ -51,7 +51,8 @@ The following command will create a PIM project in the current directory. Please
     $ cd pim
     $ docker run -ti -u www-data --rm \
         -v $(pwd):/srv/pim -v ~/.composer:/var/www/.composer -w /srv/pim \
-        akeneo/pim-php-dev:5.0 php /usr/local/bin/composer create-project \
+        akeneo/pim-php-dev:5.0 php -d memory_limit=4G \
+	/usr/local/bin/composer create-project \
         akeneo/pim-community-standard /srv/pim "5.0.*@stable"
 
 .. note::
